@@ -1,13 +1,13 @@
 (function (window, document) {
     /**
-    * CAN\VAS Plugin - Adding line breaks to canvas
-    * @arg {string} [str=Hello World] - text to be drawn
-    * @arg {number} [x=0]             - top left x coordinate of the text
-    * @arg {number} [y=textSize]      - top left y coordinate of the text
-    * @arg {number} [w=canvasWidth]   - maximum width of drawn text
-    * @arg {number} [lh=1]            - line height
-    * @arg {number} [method=fill]     - text drawing method, if 'none', text will not be rendered
-    */
+     * CANVAS Plugin - Adding line breaks to canvas
+     * @arg {string} [str=Hello World] - text to be drawn
+     * @arg {number} [x=0]             - top left x coordinate of the text
+     * @arg {number} [y=textSize]      - top left y coordinate of the text
+     * @arg {number} [w=canvasWidth]   - maximum width of drawn text
+     * @arg {number} [lh=1]            - line height
+     * @arg {number} [method=fill]     - text drawing method, if 'none', text will not be rendered
+     */
 
     CanvasRenderingContext2D.prototype.drawBreakingText = function (str, x, y, w, lh, method) {
         // local variables and defaults
@@ -77,8 +77,6 @@
 var canvas = document.createElement('canvas');
 var canvasWrapper = document.getElementById('canvasWrapper');
 canvasWrapper.appendChild(canvas);
-canvas.width = 500;
-canvas.height = 500;
 var ctx = canvas.getContext('2d');
 var padding = 15;
 var textTop = 'Welcome to Memehub';
@@ -87,15 +85,14 @@ var textSizeTop = 10;
 var textSizeBottom = 10;
 var image = document.createElement('img');
 
+image.width = 500;
+image.height = 550;
 
 image.onload = function (ev) {
-    // delete and recreate canvas
-    canvas.outerHTML = '';
-    canvas = document.createElement('canvas');
-    canvasWrapper.appendChild(canvas);
-    ctx = canvas.getContext('2d');
-    document.getElementById('trueSize').click();
-    document.getElementById('trueSize').click();
+    // draw the image
+    canvas.width = image.width;
+    canvas.height = image.height;
+    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 
     draw();
 };
@@ -135,12 +132,12 @@ document.getElementById('textSizeBottom').oninput = function (ev) {
     document.getElementById('textSizeBottomOut').innerHTML = this.value;
 };
 
-document.getElementById('trueSize').onchange = function (ev) {
-    if (document.getElementById('trueSize').checked) {
-        canvas.classList.remove('fullwidth');
-    } else {
-        canvas.classList.add('fullwidth');
-    }
+document.getElementById('textColorTop').oninput = function (ev) {
+    draw();
+};
+
+document.getElementById('textColorBottom').oninput = function (ev) {
+    draw();
 };
 
 document.getElementById('export').onclick = function () {
@@ -167,30 +164,25 @@ function draw() {
     var top = textTop.toUpperCase();
     var bottom = textBottom.toUpperCase();
 
-    // set appropriate canvas size
-    canvas.width = image.width;
-    canvas.height = image.height;
+    // Get the selected text colors
+    var textColorTop = document.getElementById('textColorTop').value;
+    var textColorBottom = document.getElementById('textColorBottom').value;
 
-    // draw the image
-    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-
-    // styles
-    ctx.fillStyle = '#fff';
-    ctx.strokeStyle = '#000';
-    ctx.lineWidth = canvas.width * 0.004;
+    // Apply the text colors
+    ctx.fillStyle = textColorTop;
+    ctx.strokeStyle = textColorTop;
 
     var _textSizeTop = textSizeTop / 100 * canvas.width;
-    var _textSizeBottom = textSizeBottom / 100 * canvas.width;
-
-    // draw top text
-    style('Impact', _textSizeTop, 'center', 'bottom');
+    style('Arial', _textSizeTop, 'center', 'bottom');
     ctx.drawBreakingText(top, canvas.width / 2, _textSizeTop + padding, null, 1, 'fill');
     ctx.drawBreakingText(top, canvas.width / 2, _textSizeTop + padding, null, 1, 'stroke');
 
-    // draw bottom text
-    style('Impact', _textSizeBottom, 'center', 'top');
+    ctx.fillStyle = textColorBottom;
+    ctx.strokeStyle = textColorBottom;
+
     var height = ctx.drawBreakingText(bottom, 0, 0, null, 1, 'none').textHeight;
-    console.log(ctx.drawBreakingText(bottom, 0, 0, null, 1, 'none'));
+    var _textSizeBottom = textSizeBottom / 100 * canvas.width;
+    style('Arial', _textSizeBottom, 'center', 'top');
     ctx.drawBreakingText(bottom, canvas.width / 2, canvas.height - padding - height, null, 1, 'fill');
     ctx.drawBreakingText(bottom, canvas.width / 2, canvas.height - padding - height, null, 1, 'stroke');
 }
