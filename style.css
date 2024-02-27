@@ -86,7 +86,6 @@ body {
     transition: 0.4s linear;
     padding: 0 10px;
   }
-  
   .text_input:hover .input {
     padding-right: 0 15px;
     caret-color: #766fe7;
@@ -130,64 +129,54 @@ body {
     cursor: pointer;
     border: 3px solid #f4f4f4;
   }
+
+.text-color2{
+  margin-left: 173px;
+}
+
+  @media (max-width: 768px) {
+    .header{
+      padding: 1rem 2rem;
+    }
+    .container {
+      padding: 1rem 0.5rem; 
+      flex-direction: column; 
+    }
+    .container-type{
+      margin-bottom: 20px; 
+      flex-direction: column; 
+    }
+    .text_input{
+      margin-left: 3rem;
+      margin-bottom: 20px;
+    }
+    
+    .memeForm {
+      padding-top:2rem;
+      padding-left: 0rem; 
+    }
+    h4 {
+      font-size: 1.4rem;
+      text-align: center;
+    }
+    h5{
+      font-size:1.2rem;
+      text-align:center;
+      padding-left:1.5rem;
+    }
   
-  input[type="checkbox"] {
-    display: none;
-  }
-  
-  input[type="checkbox"] + label {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 20px;
-    font: 14px/20px "Open Sans", Arial, sans-serif;
-    color: #fff;
-    cursor: pointer;
-    -webkit-user-select: none;
-    user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-  }
-  
-  input[type="checkbox"] + label:last-child {
-    margin-bottom: 0;
-  }
-  
-  input[type="checkbox"] + label:before {
-    content: "";
-    display: block;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #766fe7;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0.6;
-    -webkit-transition: all 0.12s;
-    transition: all 0.12s;
-  }
-  
-  input[type="checkbox"]:checked + label:before {
-    width: 10px;
-    top: -5px;
-    left: 5px;
-    border-radius: 0;
-    opacity: 1;
-    border-top-color: transparent;
-    border-left-color: transparent;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-  input[type="checkbox"] + label:after {
-    content: "";
-    display: block;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #766fe7;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0.6;
-    -webkit-transition: all 0.12s;
-    transition: all 0.12s;
+    .box {
+      flex-direction: column; 
+      margin-top: 2rem; 
+
+    }
+    .sliderContainer{
+      margin-left: 3.5rem;
+    }
+    .input {
+      width: 100%; /* Take full width */
+    }
+    #textColorTop{
+      padding-left:50%;
+    }
   }
