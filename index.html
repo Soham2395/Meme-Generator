@@ -27,7 +27,7 @@
         <div class="memeForm">
             <h4>Source Image</h4>
             <div class="box">
-                <div>
+                <div class="container-type">
                     <h5>From URL</h5>
                     <div class="text_input">
                         <input id="imgURL" class="input" type="text" placeholder="Link to image" />
@@ -68,16 +68,19 @@
                     </div>
                 </div>
             </div>
+            <h4 style="margin-top: 30px">Text Color</h4>
             <div class="box">
-                <div>
-                    <h4 style="margin-top: 25px">Preview Size</h4>
-                    <input id="trueSize" type="checkbox" />
-                    <label for="trueSize"><span>Show true size</span></label>
+                <div class="text-color">
+                    <h5>Top Text Color</h5>
+                    <input id="textColorTop" type="color" value="#ffffff"  />
+                </div>
+                <div class="text-color2">
+                    <h5>Bottom Text Color</h5>
+                    <input id="textColorBottom" type="color" value="#ffffff" />
                 </div>
             </div>
         </div>
     </div>
     <script src="script.js"></script>
 </body>
-
 </html>
