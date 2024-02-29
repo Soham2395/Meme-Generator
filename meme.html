@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="style.css">
+    <title>Memehub</title>
+</head>
+
+<body>
+    <div class="header">
+        <h3 style="color: #fff"><b>meme<span class="head-two">hub.</span></b></h3>
+        <div>
+            <button id="export"><b>GENERATE</b></button>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <div id="canvasWrapper"></div>
+        </div>
+        <div class="memeForm">
+            <h4>Source Image</h4>
+            <div class="box">
+                <div class="container-type">
+                    <h5>From URL</h5>
+                    <div class="text_input">
+                        <input id="imgURL" class="input" type="text" placeholder="Link to image" />
+                    </div>
+                </div>
+                <div>
+                    <h5>Upload from your device</h5>
+                    <input id="imgFile" type="file" accept="image/*" />
+                </div>
+            </div>
+            <h4 style="margin-top: 30px">Meme Text</h4>
+            <div class="box">
+                <div>
+                    <h5>Top Text</h5>
+                    <div class="text_input">
+                        <input id="textTop" type="text" class="input" placeholder="Top text" />
+                    </div>
+                </div>
+                <div>
+                    <h5>Bottom Text</h5>
+                    <div class="text_input">
+                        <input id="textBottom" type="text" class="input" placeholder="Bottom text" />
+                    </div>
+                </div>
+            </div>
+            <h4 style="margin-top: 30px">Text Size</h4>
+            <div class="box">
+                <div>
+                    <h5>Top Text: <span id="textSizeTopOut">10</span></h5>
+                    <div class="sliderContainer">
+                        <input id="textSizeTop" type="range" min="1" max="100" step="1" />
+                    </div>
+                </div>
+                <div>
+                    <h5>Bottom Text: <span id="textSizeBottomOut">10</span></h5>
+                    <div class="sliderContainer">
+                        <input id="textSizeBottom" type="range" min="1" max="100" step="1" />
+                    </div>
+                </div>
+            </div>
+            <h4 style="margin-top: 30px">Text Color</h4>
+            <div class="box">
+                <div class="text-color">
+                    <h5 class="head">Top Text Color</h5>
+                    <input id="textColorTop" type="color" value="#ffffff"  />
+                </div>
+                <div class="text-color2">
+                    <h5 class="h5">Bottom Text Color</h5>
+                    <input id="textColorBottom" type="color" value="#ffffff" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

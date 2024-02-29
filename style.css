@@ -174,9 +174,12 @@ body {
       margin-left: 3.5rem;
     }
     .input {
-      width: 100%; /* Take full width */
+      width: 80%; /* Take full width */
     }
-    #textColorTop{
-      padding-left:50%;
+    .text-color{
+      padding-left: 11rem;
+    }
+    .text-color2{
+      align-items:center;
     }
   }
