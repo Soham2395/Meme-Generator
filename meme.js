@@ -1,5 +1,5 @@
 (function (window, document) {
-    // add the drawBreakingText method to the 2D context
+    // adding drawBreakingText method to the 2D context
     CanvasRenderingContext2D.prototype.drawBreakingText = function (str, x, y, w, lh, method) {
         // local variables and defaults
         var textSize = parseInt(this.font.replace(/\D/gi, ''));
@@ -117,7 +117,6 @@ document.getElementById('textSizeBottom').oninput = function (ev) {
     draw();
     document.getElementById('textSizeBottomOut').innerHTML = this.value;
 };
-
 document.getElementById('export').onclick = function () {
     var img = canvas.toDataURL('image/png');
     var link = document.createElement("a");
@@ -136,39 +135,48 @@ function style(font, size, align, base) {
     ctx.textAlign = align;
     ctx.textBaseline = base;
 }
+document.getElementById('textColorTop').oninput = function (ev) {
+    var colorTop = this.value;
+    var colorBottom = document.getElementById('textColorBottom').value;
+    draw(colorTop, colorBottom); 
+};
 
-function draw() {
-    // uppercase the text
+document.getElementById('textColorBottom').oninput = function (ev) {
+    var colorBottom = this.value;
+    var colorTop = document.getElementById('textColorTop').value;
+    draw(colorTop, colorBottom); 
+};
+
+function draw(colorTop, colorBottom) {
     var top = textTop.toUpperCase();
     var bottom = textBottom.toUpperCase();
-
-    // set appropriate canvas size
     canvas.width = 500;
     canvas.height = 550;
-
-    // draw the image
     ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 
-    // styles
-    ctx.fillStyle = '#fff';
-    ctx.strokeStyle = '#000';
+    ctx.fillStyle = colorTop;
+    ctx.strokeStyle = colorTop;
     ctx.lineWidth = canvas.width * 0.004;
 
     var _textSizeTop = textSizeTop / 100 * canvas.width;
     var _textSizeBottom = textSizeBottom / 100 * canvas.width;
 
-    // draw top text
+    // Draw top text
     style('Arial', _textSizeTop, 'center', 'bottom');
     ctx.drawBreakingText(top, canvas.width / 2, _textSizeTop + padding, null, 1, 'fill');
     ctx.drawBreakingText(top, canvas.width / 2, _textSizeTop + padding, null, 1, 'stroke');
 
-    // draw bottom text
-    style('Arial', _textSizeBottom, 'center', 'top');
+    // Draw bottom text with its own font size
+    ctx.fillStyle = colorBottom;
+    ctx.strokeStyle = colorBottom;
+
     var height = ctx.drawBreakingText(bottom, 0, 0, null, 1, 'none').textHeight;
-    console.log(ctx.drawBreakingText(bottom, 0, 0, null, 1, 'none'));
+
+    style('Arial', _textSizeBottom, 'center', 'top');
     ctx.drawBreakingText(bottom, canvas.width / 2, canvas.height - padding - height, null, 1, 'fill');
     ctx.drawBreakingText(bottom, canvas.width / 2, canvas.height - padding - height, null, 1, 'stroke');
 }
+
 
 image.src = 'https://imgflip.com/s/meme/The-Most-Interesting-Man-In-The-World.jpg';
 document.getElementById('textSizeTop').value = textSizeTop;
