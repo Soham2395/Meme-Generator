@@ -131,7 +131,7 @@ body {
   }
 
 .text-color2{
-  margin-left: 173px;
+  margin-left: 170px;
 }
 
   @media (max-width: 768px) {
@@ -139,7 +139,7 @@ body {
       padding: 1rem 2rem;
     }
     .container {
-      padding: 1rem 0.5rem; 
+      padding: 1rem; 
       flex-direction: column; 
     }
     .container-type{
@@ -155,6 +155,16 @@ body {
       padding-top:2rem;
       padding-left: 0rem; 
     }
+    #imgFile {
+      display: block;
+      padding-left: 100px;
+    }
+    #textColorTop{
+      margin-left: 53px;
+    }
+    #textColorBottom{
+      margin-left: 70px;
+    }
     h4 {
       font-size: 1.4rem;
       text-align: center;
@@ -168,18 +178,16 @@ body {
     .box {
       flex-direction: column; 
       margin-top: 2rem; 
+      align-items: center;
 
     }
     .sliderContainer{
-      margin-left: 3.5rem;
+      align-items: center;
     }
     .input {
-      width: 80%; /* Take full width */
-    }
-    .text-color{
-      padding-left: 11rem;
+      width: 100%; /* Take full width */
     }
     .text-color2{
-      align-items:center;
+      margin-left:0px;
     }
   }
