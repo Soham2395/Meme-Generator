@@ -74,8 +74,8 @@ var ctx = canvas.getContext('2d');
 var padding = 15;
 var textTop = 'Welcome to Memehub';
 var textBottom = 'Where you can create your own memes!';
-var textSizeTop = 10;
-var textSizeBottom = 10;
+var textSizeTop = 7;
+var textSizeBottom = 7;
 var image = document.createElement('img');
 
 
@@ -178,7 +178,7 @@ function draw(colorTop, colorBottom) {
 }
 
 
-image.src = 'https://imgflip.com/s/meme/The-Most-Interesting-Man-In-The-World.jpg';
+image.src = 'https://imgflip.com/s/meme/Hide-the-Pain-Harold.jpg';
 document.getElementById('textSizeTop').value = textSizeTop;
 document.getElementById('textSizeBottom').value = textSizeBottom;
 document.getElementById('textSizeTopOut').innerHTML = textSizeTop;

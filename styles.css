@@ -205,12 +205,19 @@ header .right{
     gap: 1rem;
 }
 
-.main-btn{
+.menu_btn{
     display: none;
-    font-size: 1.2rem;
-    cursor: pointer;
+    background:transparent;
+    cursor:pointer;
 }
-
+.mobile-nav-icon{
+    width:3rem;
+    height:3rem;
+    color:var(--primary-color);
+}
+.mobile-nav-icon[name="close-outline"]{
+    display:none;
+}
 /* HERO  */
 #hero {
     min-height: 100vh;
@@ -406,6 +413,9 @@ header .right{
 .member:nth-child(4){
     margin-top: 5rem;
 }
+.member {
+    position:relative;
+}
 .member__img{
     margin-bottom: 1rem;
     transition: transform 0.5s;
@@ -419,6 +429,31 @@ header .right{
 .member__content p {
     opacity: 0.4;
     font-weight: 600;
+}
+.member__social-icons {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+}
+
+.member:hover .member__social-icons {
+    opacity: 1;
+}
+
+.member__social-icons a {
+    display: inline-block;
+    margin: 0 8px;
+    font-size: 20px;
+}
+
+.member__social-icons a:hover {
+    color: #766fe7; 
 }
 /* TESTIMONIALS */
 
@@ -576,29 +611,43 @@ footer{
         font-size: 2rem;
     }
     /* HEADER */
-    .header__menu{
-        position: fixed;
-        top: 0;
-        left: 0;
+    .navbar{
         width: 100%;
         height: 100vh;
-        flex-direction: column;
+        background-color: rgb(14, 19, 28);
+        position: absolute;
+        top:0;
+        left:0;
+        display:flex;
         justify-content: center;
         align-items: center;
-        background-color: #fff;
-        transform: translateX(-100%);
-        transition: transform 0.3s;
+        transform:translateX(100%);
+        transition:all 0.5s linear;
+        opacity:0;
+        visibility: hidden;
+        pointer-events: none;
     }
-    .header__menu.show {
-        transform: translateX(0);
-    }
-    .header__menu li {
-        margin: 1rem 0;
+    .header__menu{
+        flex-direction: column;  
+        align-items:center;
     }
     .menu_btn {
         display: block;
         z-index:99;
     }
+    .active .navbar{
+        transform:translateX(0);
+        opacity:0.9;
+        visibility: visible;
+        pointer-events:auto;
+    }
+    .active .menu_btn.mobile-nav-icon[name="close-outline"]{
+        display:block;
+    }
+    .active .menu_btn.mobile-nav-icon[name="menu-outline"]{
+        display:none;
+    }
+
     /* HERO */
 #hero {
     flex-direction: column;

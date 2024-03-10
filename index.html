@@ -18,18 +18,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <!-- FONTAWESOME -->
-    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <title>MemeHub</title>
   </head>
   <body>
     <!-- HEADER -->
-    <header>
+    <header class="header">
       <div class="container flex-row" >
         <div class="header__logo">     
           <h3 style="color: #fff"><b>meme<span class="head-two">hub.</span></b></h3>
         </div>
-        <nav>
+        <nav class="navbar">
           <ul class="header__menu  flex-row">
             <li>
               <a href="#hero">Home</a>
@@ -53,9 +54,9 @@
         </nav>
         <div class="right flex-center">
           <a href="login.html" class="btn btn-secondary">Log In</a>
-          <!-- <a href="#contact" class="btn btn-secondary">Sign Up</a> -->
           <div class="menu_btn">
-            <i class="fas fa-bars"></i>
+            <ion-icon name="menu-outline" class="mobile-nav-icon"></ion-icon>
+            <ion-icon name="close-outline" class="mobile-nav-icon"></ion-icon>
           </div>
         </div>
       </div>
@@ -71,7 +72,7 @@
         <p class="text">
           Make memes from images and videos in just a few clicks
         </p>
-        <a href="login.html" class="btn btn-primary" style="font-size: 20px;">Create a meme ></a>
+        <a href="meme.html" class="btn btn-primary" style="font-size: 20px;">Create a meme ></a>
       </div>
       <div class="hero__img">
         <img src="img/hero.jpg" alt="">
@@ -251,7 +252,6 @@ background-size: 100% 100%;
               Where you can also upload your own templates or start from scratch with empty templates. 
               You can draw, outline, or scribble on your meme using the panel just above the meme preview image.
             </p>
-            <a href="#" class="btn btn-secondary">View details</a>
           </div>
         </div>
         <div class="project">
@@ -260,11 +260,10 @@ background-size: 100% 100%;
           </div>
           <div class="project__content">
             <h3 class="project__category" style="color:#766fe7;">Photo Editing</h3>
-            <h3 class="project__title">Free Online Photo Editor with<br> Beautiful effects, filters, and adjustments</h3>
+            <h3 class="project__title">Free Online Photo Editor with<br> stunning meme designs</h3>
             <p class="project__text">
               Drag and drop your image to the editor with ease and start editing right away. JPEG/JPG, PNG, WEBP, HEIC, SVG, and PSD (Photoshop) formats are supported
             </p>
-            <a href="#" class="btn btn-secondary">View details</a>
           </div>
         </div>
         <div class="project">  
@@ -272,13 +271,12 @@ background-size: 100% 100%;
             <img src="img/video.jpg" alt="">
           </div>
           <div class="project__content">
-            <h3 class="project__category" style="color:#766fe7;">Video Editing</h3>
-            <h3 class="project__title">A free video editor with powerful editing tools</h3>
+            <h3 class="project__category" style="color:#766fe7;">E-Commerce Meme Generator</h3>
+            <h3 class="project__title">Convert your memes into business</h3>
             <p class="project__text">
-              Inspire design in the classroom and create unique video projects. <br>
-              Inspire design in the classroom and create unique video projects.
+              Turn the memes generated into a profitable business. <br>
+              You can sell your memes and make money with our ecommerce support.
             </p>
-            <a href="#" class="btn btn-secondary">View details</a>
           </div>
         </div>
       </div>
@@ -297,37 +295,57 @@ background-size: 100% 100%;
         <div class="member">
           <div class="member__img">
             <img src="img/soham.jpg" alt="">
+              <div class="member__social-icons">
+                <a href="https://www.instagram.com/techno_phile18/"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/Soham2395"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/soham-chakraborty-108450255/"><i class="fab fa-linkedin"></i></a>
+              </div>
           </div>
           <div class="member__content">
-            <h1>Soham</h1>
-            <p>Web Developer</p>
+            <h1>Soham Chakraborty</h1>
+            <p>Full-stack Developer</p>
           </div>
         </div>
         <div class="member">
           <div class="member__img">
             <img src="img/somil.jpg" alt="">
+            <div class="member__social-icons">
+              <a href="https://www.instagram.com/techno_phile18/"><i class="fab fa-instagram"></i></a>
+              <a href="https://github.com/Soham2395"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/soham-chakraborty-108450255/"><i class="fab fa-linkedin"></i></a>
+            </div>
           </div>
           <div class="member__content">
-            <h1>Somil</h1>
+            <h1>Somil Pathania</h1>
             <p>Content Writter</p>
           </div>
         </div>
         <div class="member">
           <div class="member__img">
             <img src="img/subhjit.jpg" alt="">
+            <div class="member__social-icons">
+              <a href="https://www.instagram.com/techno_phile18/"><i class="fab fa-instagram"></i></a>
+              <a href="https://github.com/SubhajitM1905"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/subhajit-misra-07545829a"><i class="fab fa-linkedin"></i></a>
+            </div>
           </div>
           <div class="member__content">
-            <h1>Subhajit</h1>
-            <p>Web Developer</p>
+            <h1>Subhajit Misra</h1>
+            <p>Front-end Developer</p>
           </div>
         </div>
         <div class="member">
           <div class="member__img">
             <img src="img/subham.jpg" alt="">
+            <div class="member__social-icons">
+              <a href="https://www.instagram.com/techno_phile18/"><i class="fab fa-instagram"></i></a>
+              <a href="https://github.com/Soham2395"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/soham-chakraborty-108450255/"><i class="fab fa-linkedin"></i></a>
+            </div>
           </div>
           <div class="member__content">
             <h1>Subham Das</h1>
-            <p>Web Developer</p>
+            <p>Front-end Developer</p>
           </div>
         </div>
       </div>
@@ -357,9 +375,9 @@ background-size: 100% 100%;
           </form>
           <div class="contact__details">
             <p class="text">
-              Start creating immediately with thousands of templates and copyright free videos, images, music, and GIFs. Repurpose content from the internet by pasting a link.
+              We're here to help and answer any question you might have. We look forward to hearing from you !<br>
               <br>
-              We don't serve ads: we're committed to building a quality, trustworthy website. And we will never spam you nor sell your information to anyone.
+              Contact us for any doubt or query. We are here to help you out.
             </p>
             <div class="details">
               <div class="detail">
@@ -426,14 +444,14 @@ background-size: 100% 100%;
           <li><a href="#services">Services</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#team">Team</a></li>
-          <li><a href="#contacts">Contacts</a></li>
+          <li><a href="#contacts">Contact</a></li>
         </ul>
       </div>
       <div class="footer__menu">
         <h3 class="footer__menu-title">Services</h3>
         <ul class="footer__menu-list">
-          <li><a href="#">Meme Generator</a></li>
-          <li><a href="#">Photo Editing</a></li>
+          <li><a href="meme.html">Meme Generator</a></li>
+          <li><a href="meme.html">Photo Editing</a></li>
         </ul>
       </div>
       <div class="footer__menu">
