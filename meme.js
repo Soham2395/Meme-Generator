@@ -117,12 +117,14 @@ document.getElementById('textSizeBottom').oninput = function (ev) {
     draw();
     document.getElementById('textSizeBottomOut').innerHTML = this.value;
 };
+
 document.getElementById('export').onclick = function () {
     var img = canvas.toDataURL('image/png');
     var link = document.createElement("a");
     link.download = 'My Meme';
     link.href = img;
     link.click();
+    
 
     var win = window.open('', '_blank');
     win.document.write('<img style="box-shadow: 0 0 1em 0 dimgrey;" src="' + img + '"/>');
@@ -176,7 +178,19 @@ function draw(colorTop, colorBottom) {
     ctx.drawBreakingText(bottom, canvas.width / 2, canvas.height - padding - height, null, 1, 'fill');
     ctx.drawBreakingText(bottom, canvas.width / 2, canvas.height - padding - height, null, 1, 'stroke');
 }
+function shareOnSocialMedia(imageUrl) {
+    // Share on Facebook
+    document.getElementById('share-facebook').onclick = function () {
+        var shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(imageUrl);
+        window.open(shareUrl, '_blank');
+    };
 
+    // Share on Twitter
+    document.getElementById('share-twitter').onclick = function () {
+        var shareUrl = 'https://twitter.com/intent/tweet?text=Check%20out%20my%20meme&url=' + encodeURIComponent(imageUrl);
+        window.open(shareUrl, '_blank');
+    };
+}
 
 image.src = 'https://imgflip.com/s/meme/Hide-the-Pain-Harold.jpg';
 document.getElementById('textSizeTop').value = textSizeTop;
